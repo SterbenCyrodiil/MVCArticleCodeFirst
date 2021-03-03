@@ -16,9 +16,29 @@ namespace MVCArticleCodeFirst.Controllers
         private ArticleContext db = new ArticleContext();
 
         // GET: Articles
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
-            return View(db.Articles.ToList());
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParam = String.IsNullOrEmpty(sortOrder) ? "desc" : "";
+            ViewBag.PriceSortParam = sortOrder == "Price" ? "p_desc" : "Price";
+            var articles = db.Articles.ToList(); 
+            switch (sortOrder)
+            {
+                case "desc":
+                    articles = articles.OrderByDescending(a => a.Name).ToList();
+                    break;
+                case "p_desc":
+                    articles = articles.OrderByDescending(a => a.Price).ToList();
+                    break;
+                case "p_asc":
+                    articles = articles.OrderBy(a => a.Price).ToList();
+                    break; 
+                default:
+                    articles = articles.OrderBy(a => a.Name).ToList();
+                    break;
+
+            }
+            return View(articles);
         }
 
         // GET: Articles/Details/5
