@@ -16,12 +16,28 @@ namespace MVCArticleCodeFirst.Controllers
         private ArticleContext db = new ArticleContext();
 
         // GET: Articles
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index(string sortOrder, string currentFilter, string articleName)
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParam = String.IsNullOrEmpty(sortOrder) ? "desc" : "";
             ViewBag.PriceSortParam = sortOrder == "Price" ? "p_desc" : "Price";
             var articles = db.Articles.ToList(); 
+
+             if(articleName != null)
+            {
+
+            }
+            else
+            {
+                articleName = currentFilter;
+            }
+                ViewBag.CurrentFilter = articleName; 
+
+            if (!string.IsNullOrEmpty(articleName))
+            {
+                articles = articles.Where(a => a.Name.Contains(articleName)).ToList(); 
+            }
+
             switch (sortOrder)
             {
                 case "desc":
