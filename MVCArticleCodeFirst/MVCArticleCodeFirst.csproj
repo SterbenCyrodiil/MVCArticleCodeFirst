@@ -131,9 +131,9 @@
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="DAL\ArticleContext.cs" />
     <Compile Include="DAL\ArticleInitializer.cs" />
-    <Compile Include="Migrations\202103041023142_AddedLocationEntity.cs" />
-    <Compile Include="Migrations\202103041023142_AddedLocationEntity.Designer.cs">
-      <DependentUpon>202103041023142_AddedLocationEntity.cs</DependentUpon>
+    <Compile Include="Migrations\202103041439144_LocationAdded.cs" />
+    <Compile Include="Migrations\202103041439144_LocationAdded.Designer.cs">
+      <DependentUpon>202103041439144_LocationAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Location.cs" />
     <Compile Include="Global.asax.cs">
@@ -214,8 +214,8 @@
     <EmbeddedResource Include="Migrations\202103031613117_InitialCreate.resx">
       <DependentUpon>202103031613117_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103041023142_AddedLocationEntity.resx">
-      <DependentUpon>202103041023142_AddedLocationEntity.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103041439144_LocationAdded.resx">
+      <DependentUpon>202103041439144_LocationAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

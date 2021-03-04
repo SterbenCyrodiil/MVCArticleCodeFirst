@@ -51,9 +51,14 @@ namespace MVCArticleCodeFirst.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Locations.Add(location);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var article = db.Articles.Where(a => a.Name.Equals(location.Name)).FirstOrDefault();
+                if (article != null) {
+                    int id = article.Id;
+                    location.Article_Id = id;
+                    db.Locations.Add(location);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
 
             return View(location);

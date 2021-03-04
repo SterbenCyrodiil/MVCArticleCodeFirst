@@ -7,13 +7,13 @@ namespace MVCArticleCodeFirst.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddedLocationEntity : IMigrationMetadata
+    public sealed partial class NewMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedLocationEntity));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NewMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202103041023142_AddedLocationEntity"; }
+            get { return "202103041353165_NewMigration"; }
         }
         
         string IMigrationMetadata.Source

@@ -3,7 +3,7 @@ namespace MVCArticleCodeFirst.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddedLocationEntity : DbMigration
+    public partial class LocationAdded : DbMigration
     {
         public override void Up()
         {
@@ -14,10 +14,10 @@ namespace MVCArticleCodeFirst.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false),
                         Article = c.String(nullable: false),
-                        Article_Id = c.Int(),
+                        Article_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Article", t => t.Article_Id)
+                .ForeignKey("dbo.Article", t => t.Article_Id, cascadeDelete: true)
                 .Index(t => t.Article_Id);
             
         }
