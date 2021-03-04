@@ -128,8 +128,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="DAL\ArticleContext.cs" />
     <Compile Include="DAL\ArticleInitializer.cs" />
+    <Compile Include="Migrations\202103041023142_AddedLocationEntity.cs" />
+    <Compile Include="Migrations\202103041023142_AddedLocationEntity.Designer.cs">
+      <DependentUpon>202103041023142_AddedLocationEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -182,6 +188,11 @@
     <Content Include="Views\Articles\Details.cshtml" />
     <Content Include="Views\Articles\Edit.cshtml" />
     <Content Include="Views\Articles\Index.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -202,6 +213,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202103031613117_InitialCreate.resx">
       <DependentUpon>202103031613117_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103041023142_AddedLocationEntity.resx">
+      <DependentUpon>202103041023142_AddedLocationEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

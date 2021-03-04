@@ -17,10 +17,10 @@ namespace MVCArticleCodeFirst.DAL
         }
 
         public DbSet<Article> Articles { get; set; }
+        public DbSet<Location> Locations { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
-
     }
 }

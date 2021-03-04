@@ -25,7 +25,19 @@
         <dd>
             @Html.DisplayFor(model => model.Price)
         </dd>
-
+        <dd>
+            <table class="table">
+                <tr><th>LOCATIONS</th></tr>
+                @foreach (var item in Model.Locations)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name); 
+                        </td>
+                    </tr>
+                }
+                </table>
+        </dd>
     </dl>
 </div>
 <p>
