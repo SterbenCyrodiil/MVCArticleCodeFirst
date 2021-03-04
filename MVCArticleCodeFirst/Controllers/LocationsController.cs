@@ -51,7 +51,7 @@ namespace MVCArticleCodeFirst.Controllers
         {
             if (ModelState.IsValid)
             {
-                var article = db.Articles.Where(a => a.Name.Equals(location.Name)).FirstOrDefault();
+                var article = db.Articles.Where(a => a.Name.Equals(location.Article)).FirstOrDefault();
                 if (article != null) {
                     int id = article.Id;
                     location.Article_Id = id;
